@@ -1,0 +1,8 @@
+[run]
+source = authencation/,learn/,
+omit =
+    */venv/*
+    */manage.py/*
+     */migrations/*
+     */_init__.py/*
+     */tests.py/*
