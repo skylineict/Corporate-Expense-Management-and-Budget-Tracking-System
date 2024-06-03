@@ -111,9 +111,9 @@ class Login(GenericAPIView):
       
         
       
-        mykeys = config('GOOGLE_CLIENT_ID')
-        import  pdb
-        pdb.set_trace()
+        # mykeys = config('GOOGLE_CLIENT_ID')
+        # import  pdb
+        # pdb.set_trace()
         # token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256').decode('utf-8')
         response = Response()
 

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -52,7 +53,7 @@ INSTALLED_APPS = [
     'incomes',
     'django_filters',
     'expensestatis',
-    'socialmedia'
+    'socialmediaapp',
     
     
 ]
@@ -74,6 +75,12 @@ MIDDLEWARE = [
 #         'rest_framework_simplejwt.authentication.JWTAuthentication',
 #         # Add other authentication classes here if needed
 #     ),
+
+
+# settings.py
+
+FACEBOOK_APP_ID = config('FACEBOOK_APP_ID')
+FACEBOOK_APP_SECRET = config('FACEBOOK_APP_SECRET')
 
 
 REST_FRAMEWORK = {

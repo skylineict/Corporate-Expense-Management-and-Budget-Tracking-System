@@ -50,7 +50,9 @@ urlpatterns = [
     path('expense/', include('expense.urls')),
     path('category/', include('category.urls')),
     path('income/', include('incomes.urls')),
-     path('expenstatis/', include('expensestatis.urls'))
+    path('expenstatis/', include('expensestatis.urls')),
+    path('socialauth/', include('socialmediaapp.urls'))
+
 
 
   

@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from django.utils import timezone
 from django.conf import settings
 import pyotp
+from shortuuid.django_fields import ShortUUIDField
 # Create your models here.
 
 
@@ -45,7 +46,7 @@ class UserManager(BaseUserManager):
 Auth_provider = {'facebook': 'facebook', 'google': 'google',
                   'twitter': 'twitter', 'email': 'email'}
 class User(Modeltracking,PermissionsMixin,AbstractBaseUser):
-     
+    id = ShortUUIDField(unique=True,primary_key=True, max_length=200,alphabet="abcdefghijklmnopqrstuvwxyz0123456789",prefix="usr-",editable=False,)
     username = models.CharField(max_length=150,unique=True,)
     email = models.EmailField( blank=False, unique=True)
     is_staff = models.BooleanField(default=False,)
@@ -54,6 +55,8 @@ class User(Modeltracking,PermissionsMixin,AbstractBaseUser):
     otp_code = models.CharField(max_length=10)
     otp_sent_time = models.DateTimeField(null=True, blank=True)
     auth_user_provider =  models.CharField(default=Auth_provider.get('email'), max_length=300)
+    full_name =  models.CharField(max_length=150,default='olisa')
+
 
 
 
